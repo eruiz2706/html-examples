@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Grid Layout</title>
+  <style>
+      .header,
+.footer,
+.sidebar,
+.main {
+  padding: 1.2em;
+}
+
+.header { color: white; background-color: #0D47A1; }
+.footer { background-color: #2196F3; }
+.main { background-color: #BBDEFB; }
+.sidebar { background-color: #EEEEEE; }
+
+body {
+  margin: 0 auto;
+}
+
+.container {
+  display: grid;
+  /* Grid de 3x5 */
+  /* 3 columnas: 1a de 200px, 2a como margen (1%), 3a ocupa el espacio restante */
+  grid-template-columns: 200px 1% 1fr;
+  /* 5 filas: grid-rows: 1a, 3a y 5a ancho automático, 2a y 4a como margen de 15px */
+  grid-template-rows: auto 15px auto 15px auto;
+}
+
+.header,
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.main {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+@media (max-width: 500px) {
+  .container {
+    display: block;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h2>Cabecera</h2>
+    </header>
+    <div class="main">
+      <h2>Main</h2>
+      <p>Este es el contenido principal. Lorem ipsum</p>
+    </div>
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li>Opcion 1</li>
+        <li>Opcion 2</li>
+        <li>Opcion 3</li>
+        <li>Opcion 4</li>
+      </ul>
+    </aside>
+    <footer class="footer">
+      <h2>Footer</h2>
+    </footer>
+  </div>
+</body>
+</html>

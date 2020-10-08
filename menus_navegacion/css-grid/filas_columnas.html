@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: grid;
+        /*grid-template-columns : 200px 200px 200px;*/
+        /*grid-template-columns : 25% 200px 25%;*/
+        /*grid-template-rows: 300px 300px;*/
+        /*grid-template : filas / columnas;*/
+        grid-template : 300px 300px / 25% 200px 25%;
+        background-color: red;
+    }
+    .container .item{
+        border: 1px solid red;
+        background-color: aqua;
+    }
+</style>
+<body>
+    <section class="container">
+        <div class="item">Contenido 1</div>
+        <div class="item">Contenido 2</div>
+        <div class="item">Contenido 3</div>
+        <div class="item">Contenido 4</div>
+        <div class="item">Contenido 5</div>
+        <div class="item">Contenido 6</div>
+        <div class="item">Contenido 7</div>
+        <div class="item">Contenido 8</div>
+        <div class="item">Contenido 9</div>
+        <div class="item">Contenido 10</div>
+        <div class="item">Contenido 11</div>
+        <div class="item">Contenido 12</div>
+    </section>    
+</body>
+</html>

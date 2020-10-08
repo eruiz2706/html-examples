@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu off - canvas</title>
+    <style>
+      /* grid */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
+
+    /* items */
+    .container > * {
+      color: #353535;
+      font-size: 1.2em;
+      line-height: 1.5;
+      padding: 20px;
+      background: #d0cfc5;
+    }
+
+    /* nav styles */
+    .container nav {
+      background: #136fd2;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #d0cfc5
+    }
+
+    nav a:hover {
+      text-decoration: none;
+    }
+
+    /* media query for grid layout */
+    @media only screen and (min-width: 600px) {
+        
+      /* grid */
+      .container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      /* specific item styles */
+      .container header,
+      .container nav,
+      .container footer {
+        grid-column: span 4;
+      }
+      .container section {
+        grid-column: span 3;
+      }
+      
+      /* nav styles */
+      nav ul li {
+        display: inline-block;
+        padding: 0 20px 0 0;
+      }
+      
+      /* hide toggle */
+      .toggle {
+        display: none;
+      }
+      
+    }
+
+    /* media query for nav styles */
+    @media only screen and (max-width: 599px) {
+      
+        #nav {
+          transition: transform .3s ease-in-out;
+          top: 0;
+          bottom: 0;   
+          min-height: 100vh; /* override Safari bug */
+          position: fixed; /* or choose `absolute` depending on desired behavior*/
+          width: 300px;
+          left: -340px;
+        }
+      
+        #nav:target {     
+          transform: translateX(340px);
+        }
+      
+        .close {
+          text-align: right;
+          display: block;
+          text-decoration: none;
+          font-size: 3em;
+          position: relative;
+          top: -30px;
+        }
+      
+    }
+    </style>
+</head>
+<body>
+    <div class="support-grid"></div>
+
+    <div class="container">
+      
+      <header role="banner">
+          <a class="toggle open" href="#nav">open</a>
+          <h1>Header</h1>
+      </header>
+    
+      <nav id="nav" role="navigation">  
+        <a class="toggle close" href="#">×</a>
+        <ul>
+            <li>
+                <a href="#">Item 1</a>
+            </li>
+            <li>
+                <a href="#">Item 2</a>
+            </li>
+            <li>
+                <a href="#">Item 3</a>
+            </li>
+        </ul>
+      </nav>
+    
+      <section role="main">
+          <article>
+              <h2>Article</h2>
+              <p>Curabitur orci lacus, auctor ut facilisis nec, ultricies quis nibh. Phasellus id diam sollicitudin, malesuada turpis id, gravida erat. Maecenas placerat elit vel hendrerit convallis. Sed in mauris ut justo vulputate viverra feugiat ac dui. Fusce feugiat arcu in vehicula vehicula. Donec varius justo at nulla aliquet volutpat.</p> 
+              <p>Ut id rutrum eros. Nulla tristique, magna et mattis vulputate, mi eros suscipit turpis, nec bibendum turpis nunc feugiat sapien. Nunc arcu est, lacinia id diam quis, sagittis euismod neque. Nullam fringilla velit sed porta gravida. Proin eu vulputate libero. Ut a lacinia enim. Etiam venenatis mauris et orci tempor congue. Sed tempor eros et ultricies congue. Aenean sed efficitur orci. Nulla vel tempus mi.</p>
+              <p>Ut cursus suscipit augue, id sagittis nibh faucibus eget. Etiam suscipit ipsum eu augue ultricies, at rhoncus mi faucibus. In et tellus vitae leo scelerisque fringilla nec at nunc.</p>
+          </article>
+      </section>
+    
+      <aside>
+          <h3>Aside</h3>
+      </aside>
+    
+      <footer>
+          <h3>Footer</h3>
+      </footer>
+      
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .container{
+        display: grid;
+        grid-template : repeat(4,1fr) / repeat(3,1fr);
+        /*grid-column-gap: 10px;
+        grid-row-gap: 10px;*/
+        background-color: red;
+        height: 100vh;
+    }
+    .container .item{
+        border: 1px solid red;
+        background-color: aqua;
+    }
+
+    .item:nth-of-type(1){
+        background-color: yellow;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .item:nth-of-type(7){
+        background-color: grey;
+        grid-column: 2  / span 2;
+    }
+
+    .item:nth-of-type(8){
+        background-color: yellow;
+        grid-column: 2  / 4;
+    }
+</style>
+<body>
+    <section class="container">
+        <div class="item">item 1</div>
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+        <div class="item">item 5</div>
+        <div class="item">item 6</div>
+        <div class="item">item 7</div>
+        <div class="item">item 8</div>
+        <div class="item">item 9</div>
+        <div class="item">item 10</div>
+        <div class="item">item 11</div>
+        <div class="item">item 12</div>
+    </section>    
+</body>
+</html>
